@@ -7,6 +7,7 @@ import java.util.Scanner;
 class Task {
     private String description;
     private boolean isDone;
+
     /**
      * Constructs a Task with the specified description and sets its status to not done.
      *
