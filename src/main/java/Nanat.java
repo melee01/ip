@@ -266,7 +266,7 @@ public class Nanat {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            String command = scanner.nextLine().trim();
+            String command = scanner.nextLine();
             Parser.handleCommand(command, taskList);
         }
     }
