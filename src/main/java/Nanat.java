@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Nanat {
     public static void main(String[] args) {
         String logo = """
@@ -8,7 +10,19 @@ public class Nanat {
                 |_|\\ _| /_/   \\_\\ |_|\\ _|  /_/   \\_\\  |_|
                 """;
 
-        System.out.println("Hello I'm\n" + logo + "\nWhat can I do for you?");
-        System.out.println("Bye. Hope to see you again soon!");
+        System.out.println("Good Morning! I'm\n" + logo + "\nWhat brings you here today?");
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String command = scanner.nextLine();
+            if (command.equals("bye")) {
+                System.out.println("     Bye. Have a great day!");
+                System.out.println("____________________________________________________________");
+                break;
+            } else {
+                System.out.println("     " + command);
+            }
+        }
+        scanner.close();
     }
 }
