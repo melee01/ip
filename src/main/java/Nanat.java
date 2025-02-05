@@ -7,7 +7,6 @@ import java.util.Scanner;
 class Task {
     private String description;
     private boolean isDone;
-
     /**
      * Constructs a Task with the specified description and sets its status to not done.
      *
@@ -57,7 +56,6 @@ class Task {
  */
 class TaskList {
     private ArrayList<Task> tasks;
-
     /**
      * Constructs a TaskList object, initializing the list of tasks.
      */
@@ -125,7 +123,6 @@ class TaskList {
  * Handles the user interface, displaying various messages and outputs.
  */
 class Ui {
-
     /**
      * Displays a welcome message when the program starts.
      */
@@ -152,7 +149,9 @@ class Ui {
         System.out.println("____________________________________________________________");
     }
 
-    /**
+    /**Tweak the code to comply with a coding standard
+
+     Tweak the code to comply with a given coding standard. From this point onward, ensure any new code added are compliant with the given coding standard.
      * Displays the list of tasks currently stored in the task list.
      *
      * @param tasks The list of tasks to be displayed.
@@ -217,7 +216,6 @@ class Ui {
  * Parses and handles user commands.
  */
 class Parser {
-
     /**
      * Processes the user command and performs the corresponding action on the task list.
      *
@@ -254,7 +252,6 @@ class Parser {
  * The main class that runs the task management program, interacting with the user.
  */
 public class Nanat {
-
     /**
      * Starts the task management program, interacting with the user via command input.
      *
