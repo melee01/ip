@@ -30,10 +30,20 @@ class TaskList {
         Ui.showTaskList(tasks);
     }
 
+    /**
+     * Displays number of tasks in the list
+     */
     public int numOfTasks() {
         return this.tasks.size();
     }
 
+    /**
+     * Marks a task as done based on the provided index.
+     * The task will be updated and the UI will show a confirmation message.
+     *
+     * @param index The index of the task to mark as done.
+     * @throws IndexOutOfBoundsException if the index is invalid (out of bounds).
+     */
     public void markTask(int index) {
         if (isValidIndex(index)) {
             Task task = tasks.get(index);
@@ -44,6 +54,14 @@ class TaskList {
         }
     }
 
+    /**
+     * Unmarks a task as done based on the provided index.
+     * If the task is already unmarked, an error message is displayed.
+     * If the task is marked as done, it will be unmarked and the UI will show a confirmation message.
+     *
+     * @param index The index of the task to unmark.
+     * @throws IndexOutOfBoundsException if the index is invalid (out of bounds).
+     */
     public void unmarkTask(int index) {
         if (isValidIndex(index)) {
             Task task = tasks.get(index);

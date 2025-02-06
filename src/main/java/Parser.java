@@ -38,6 +38,8 @@ public class Parser {
         } else if (command.equals("bye")) {
             Ui.showGoodbyeMessage();
             System.exit(0);
+        } else {
+            System.out.println("Unrecognized order");
         }
     }
 

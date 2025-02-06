@@ -54,9 +54,17 @@ class Ui {
 
 
     /**
-     * Displays a message confirming the addition of a task.
+     * Displays a message indicating that a task is added to the task list.
+     * It also displays the details of the task and updates the total number of tasks in the list.
      *
-     * @param description The description of the added task.
+     * This method determines the type of task based on the provided `types` value (1 for ToDo, 2 for Deadline, 3 for Event),
+     * creates the corresponding task object, and adds it to the task list. It then prints a confirmation message with the task details
+     * and the updated number of tasks in the list.
+     *
+     * @param types The type of the task (1 for ToDo, 2 for Deadline, 3 for Event).
+     * @param description The description of the task, which may contain additional details such as a deadline or event timing.
+     * @param num The current number of tasks in the list before the new task is added.
+     * @param taskList The list of tasks to which the new task will be added.
      */
     public static void showAddedMessage(int types, String description, int num, TaskList taskList) {
         System.out.println("____________________________________________________________");
@@ -77,7 +85,6 @@ class Ui {
         }
 
         if (task != null) {
-            //Task task = new Task(description);
             taskList.addTask(task);  // Add the actual Task object, not a formatted string
             System.out.println("        " + task);
         }

@@ -28,17 +28,32 @@ public class ErrorHandler {
         System.out.println("____________________________________________________________");
     }
 
+    /**
+     * Handles the case when a description is empty.
+     * This method displays a message indicating that the description cannot be empty.
+     */
     public static void handleEmptyDescription() {
         System.out.println("____________________________________________________________");
         System.out.println("     Description cannot be empty.");
         System.out.println("____________________________________________________________");
     }
 
+    /**
+     * Handles the case when the deadline format is invalid.
+     * This method displays a message indicating that the deadline format is incorrect.
+     * It suggests the correct format: "deadline <description> /by <time>".
+     */
     public static void handleEmptyDeadline() {
         System.out.println("____________________________________________________________");
         System.out.println("     Invalid deadline format. Use: deadline <description> /by <time>");
         System.out.println("____________________________________________________________");
     }
+
+    /**
+     * Handles the case when the event format is invalid.
+     * This method displays a message indicating that the event format is incorrect.
+     * It suggests the correct format: "event <description> /from <start> /to <end>".
+     */
     public static void handleEmptyEvent() {
         System.out.println("____________________________________________________________");
         System.out.println("     Invalid event format. Use: event <description> /from <start> /to <end>");
