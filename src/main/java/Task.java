@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
- * Represents a task with a description and completion status.
+ * Represents a task with a description, type, and completion status.
  */
 class Task {
     private String description;
@@ -38,16 +35,23 @@ class Task {
      * @return A string representing the task's status. "X" if the task is done, otherwise a blank space.
      */
     public String getStatusIcon() {
-        return (isDone ? "X" : " ");
+        return isDone ? "[X]" : "[ ]";
     }
 
     /**
-     * Returns a string representation of the task, including its status and description.
+     * Returns the prefix based on the task type.
+     */
+    public String getTaskType() {
+        return "";
+    }
+
+    /**
+     * Returns a string representation of the task, including its type, status, and description.
      *
-     * @return A string in the format "[status] description" (e.g., "[X] Task description").
+     * @return A string in the format "[type][status] description" (e.g., "[T][X] Task description").
      */
     @Override
     public String toString() {
-        return "[" + getStatusIcon() + "] " + description;
+        return getTaskType() + getStatusIcon() + " " + description;
     }
 }

@@ -44,13 +44,14 @@ class Ui {
         if (tasks.isEmpty()) {
             System.out.println("     No tasks found.");
         } else {
-            System.out.println("     Here are the tasks in your list:");
+            System.out.println("Here are the tasks in your list:");
             for (int i = 0; i < tasks.size(); i++) {
-                System.out.println("    " + (i+1) + ". " + tasks.get(i));
+                System.out.println("    " + (i + 1) + ". " + tasks.get(i));
             }
         }
         System.out.println("____________________________________________________________");
     }
+
 
     /**
      * Displays a message confirming the addition of a task.
@@ -61,34 +62,30 @@ class Ui {
         System.out.println("____________________________________________________________");
         System.out.println("     Got it. I've added this task:");
 
-        num = num+1;
-        String result;
+        num = num + 1;
+        Task task = null;  // Store the actual Task object
 
-        if(types==1) {
-            ToDo todo = new ToDo(description);
-
-            result = "        " + todo.toString();
-            taskList.addTask(result);
-            System.out.println(result);
-        } else if(types==2) {
+        if (types == 1) {
+            task = new ToDo(description);
+        } else if (types == 2) {
             String[] parts = description.split(" /by ", 2);
-
-            Deadline deadline = new Deadline(parts[0].trim(), parts[1].trim());
-            result = "        " + deadline.toString();
-            taskList.addTask(result);
-            System.out.println(result);
-        } else if(types==3) {
+            task = new Deadline(parts[0].trim(), parts[1].trim());
+        } else if (types == 3) {
             String[] parts = description.split(" /from ", 2);
             String[] timeParts = parts[1].split(" /to ", 2);
-
-            Event event = new Event(parts[0].trim(), timeParts[0].trim(), timeParts[1].trim());
-            result = "        " + event.toString();
-            taskList.addTask(result);
-            System.out.println(result);
+            task = new Event(parts[0].trim(), timeParts[0].trim(), timeParts[1].trim());
         }
+
+        if (task != null) {
+            //Task task = new Task(description);
+            taskList.addTask(task);  // Add the actual Task object, not a formatted string
+            System.out.println("        " + task);
+        }
+
         System.out.println("     Now you have " + num + " tasks in the list.");
         System.out.println("____________________________________________________________");
     }
+
 
     /**
      * Displays a message when a task is marked as done.
@@ -98,7 +95,7 @@ class Ui {
     public static void showMarkMessage(Task task) {
         System.out.println("____________________________________________________________");
         System.out.println("     Nice! I've marked this task as done:");
-        System.out.println("" + task);
+        System.out.println("     " + task);
         System.out.println("____________________________________________________________");
     }
 

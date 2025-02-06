@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Represents a list of tasks.
@@ -20,8 +19,8 @@ class TaskList {
      *
      * @param description The description of the task to be added.
      */
-    public void addTask(String description) {
-        tasks.add(new Task(description));
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 
     /**
@@ -35,34 +34,24 @@ class TaskList {
         return this.tasks.size();
     }
 
-    /**
-     * Marks a task as done based on the provided index.
-     *
-     * @param index The index of the task to mark as done.
-     */
     public void markTask(int index) {
         if (isValidIndex(index)) {
-            tasks.get(index).markAsDone();
-            Ui.showMarkMessage(tasks.get(index));
+            Task task = tasks.get(index);
+            task.markAsDone();
+            Ui.showMarkMessage(task); // Convert Task to String
         } else {
             Ui.showInvalidTaskMessage();
         }
     }
 
-    /**
-     * Unmarks a task as done based on the provided index.
-     *
-     * @param index The index of the task to unmark.
-     */
     public void unmarkTask(int index) {
         if (isValidIndex(index)) {
             Task task = tasks.get(index);
-            if (task.getStatusIcon().equals(" ")) {
-                // Task is already unmarked, show error message
+            if (!task.getStatusIcon().equals("[X]")) {
                 ErrorHandler.handleTaskAlreadyUnmarked(task);
             } else {
                 task.markAsNotDone();
-                Ui.showUnmarkMessage(task);
+                Ui.showUnmarkMessage(task); // Convert Task to String
             }
         } else {
             Ui.showInvalidTaskMessage();

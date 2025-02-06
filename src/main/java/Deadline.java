@@ -1,11 +1,7 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
- * Represents a task with a deadline that needs to be completed before a specific date/time.
+ * Represents a task with a deadline.
  */
-public class Deadline extends Task {
-
+class Deadline extends Task {
     private String by;
 
     /**
@@ -20,12 +16,18 @@ public class Deadline extends Task {
     }
 
     /**
+     * Returns the task type identifier for Deadline.
+     */
+    @Override
+    public String getTaskType() {
+        return "[D]";
+    }
+
+    /**
      * Returns a string representation of the deadline task.
-     *
-     * @return A formatted string indicating that this is a deadline task with its deadline.
      */
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
+        return super.toString() + " (by: " + by + ")";
     }
 }
