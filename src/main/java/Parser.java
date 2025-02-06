@@ -19,6 +19,22 @@ public class Parser {
             handleDeadline(command, taskList);
         } else if (command.startsWith("event ")) {
             handleEvent(command, taskList);
+        } else if (command.equals("list")) {
+            taskList.listTasks();
+        } else if (command.startsWith("mark ")) {
+            try {
+                int taskNumber = Integer.parseInt(command.substring(5)) - 1;
+                taskList.markTask(taskNumber);
+            } catch (NumberFormatException e) {
+                ErrorHandler.handleNumberFormatException();
+            }
+        } else if (command.startsWith("unmark ")) {
+            try {
+                int taskNumber = Integer.parseInt(command.substring(7)) - 1;
+                taskList.unmarkTask(taskNumber);
+            } catch (NumberFormatException e) {
+                ErrorHandler.handleNumberFormatException();
+            }
         } else if (command.equals("bye")) {
             Ui.showGoodbyeMessage();
             System.exit(0);
@@ -36,9 +52,8 @@ public class Parser {
         if (description.isEmpty()) {
             ErrorHandler.handleEmptyDescription();
         }
-        //taskList.addTask(description);
         int num = taskList.numOfTasks();
-        Ui.showAddedMessage(1, description, num);
+        Ui.showAddedMessage(1, description, num, taskList);
     }
 
     /**
@@ -53,9 +68,8 @@ public class Parser {
         if (parts.length < 2 || parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
             ErrorHandler.handleEmptyDeadline();
         }
-        //taskList.addTask(description);
         int num = taskList.numOfTasks();
-        Ui.showAddedMessage(2, description, num);
+        Ui.showAddedMessage(2, description, num, taskList);
     }
 
     /**
@@ -74,8 +88,7 @@ public class Parser {
             ErrorHandler.handleEmptyEvent();
         }
 
-        //taskList.addTask(event);
         int num = taskList.numOfTasks();
-        Ui.showAddedMessage(3, description, num);
+        Ui.showAddedMessage(3, description, num, taskList);
     }
 }
