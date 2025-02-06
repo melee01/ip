@@ -31,6 +31,10 @@ class TaskList {
         Ui.showTaskList(tasks);
     }
 
+    public int numOfTasks() {
+        return this.tasks.size();
+    }
+
     /**
      * Marks a task as done based on the provided index.
      *
