@@ -54,6 +54,7 @@ public class Parser {
         if (description.isEmpty()) {
             ErrorHandler.handleEmptyDescription();
         }
+
         int num = taskList.numOfTasks();
         Ui.showAddedMessage(1, description, num, taskList);
     }
@@ -70,10 +71,10 @@ public class Parser {
         if (parts.length < 2 || parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
             ErrorHandler.handleEmptyDeadline();
         }
+
         int num = taskList.numOfTasks();
         Ui.showAddedMessage(2, description, num, taskList);
     }
-
     /**
      * Handles the creation of an Event task.
      *

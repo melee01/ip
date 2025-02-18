@@ -52,7 +52,6 @@ class Ui {
         System.out.println("____________________________________________________________");
     }
 
-
     /**
      * Displays a message indicating that a task is added to the task list.
      * It also displays the details of the task and updates the total number of tasks in the list.

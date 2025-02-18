@@ -48,7 +48,6 @@ public class ErrorHandler {
         System.out.println("     Invalid deadline format. Use: deadline <description> /by <time>");
         System.out.println("____________________________________________________________");
     }
-
     /**
      * Handles the case when the event format is invalid.
      * This method displays a message indicating that the event format is incorrect.
