@@ -13,22 +13,22 @@ public class Parser {
      * @param taskList The TaskList to store tasks.
      */
     public static void handleCommand(String command, TaskList taskList) {
-        if (command.startsWith("todo ")) {
+        if (command.startsWith("todo")) {
             handleTodo(command, taskList);
-        } else if (command.startsWith("deadline ")) {
+        } else if (command.startsWith("deadline")) {
             handleDeadline(command, taskList);
-        } else if (command.startsWith("event ")) {
+        } else if (command.startsWith("event")) {
             handleEvent(command, taskList);
         } else if (command.equals("list")) {
             taskList.listTasks();
-        } else if (command.startsWith("mark ")) {
+        } else if (command.startsWith("mark")) {
             try {
                 int taskNumber = Integer.parseInt(command.substring(5)) - 1;
                 taskList.markTask(taskNumber);
             } catch (NumberFormatException e) {
                 ErrorHandler.handleNumberFormatException();
             }
-        } else if (command.startsWith("unmark ")) {
+        } else if (command.startsWith("unmark")) {
             try {
                 int taskNumber = Integer.parseInt(command.substring(7)) - 1;
                 taskList.unmarkTask(taskNumber);
@@ -39,7 +39,7 @@ public class Parser {
             Ui.showGoodbyeMessage();
             System.exit(0);
         } else {
-            System.out.println("Unrecognized order");
+            System.out.println("     OOPS!!! The description of a todo cannot be empty.");
         }
     }
 
@@ -50,9 +50,15 @@ public class Parser {
      * @param taskList The TaskList to store the task.
      */
     private static void handleTodo(String command, TaskList taskList) {
-        String description = command.substring(5).trim();
+        String description = command.substring(4).trim();
+
         if (description.isEmpty()) {
             ErrorHandler.handleEmptyDescription();
+            Nanat.startCommandLoop(taskList);
+        }
+
+        while(description.charAt(0) == ' ') {
+            description.substring(1).trim();
         }
 
         int num = taskList.numOfTasks();
@@ -66,10 +72,21 @@ public class Parser {
      * @param taskList The TaskList to store the task.
      */
     private static void handleDeadline(String command, TaskList taskList) {
-        String description = command.substring(9).trim();
+        String description = command.substring(8).trim();
         String[] parts = description.split(" /by ", 2);
-        if (parts.length < 2 || parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
+
+        if (description.isEmpty() || !description.contains("by")) {
             ErrorHandler.handleEmptyDeadline();
+            Nanat.startCommandLoop(taskList);
+        }
+
+        while(description.charAt(0) == ' ') {
+            description.substring(1).trim();
+        }
+
+        if (parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
+            ErrorHandler.handleEmptyDeadline();
+            Nanat.startCommandLoop(taskList);
         }
 
         int num = taskList.numOfTasks();
@@ -82,13 +99,23 @@ public class Parser {
      * @param taskList The TaskList to store the task.
      */
     private static void handleEvent(String command, TaskList taskList) {
-        String description = command.substring(6).trim();
+        String description = command.substring(5).trim();
+
+        if (description.isEmpty() || !description.contains("from") || !description.contains("to")) {
+            ErrorHandler.handleEmptyEvent();
+            Nanat.startCommandLoop(taskList);
+        }
+
+        while(description.charAt(0) == ' ') {
+            description.substring(1).trim();
+        }
 
         String[] parts = description.split(" /from ", 2);
         String[] timeParts = parts[1].split(" /to ", 2);
 
-        if (parts.length < 2 || !parts[1].contains(" /to ") || parts[0].trim().isEmpty() || timeParts[0].trim().isEmpty() || timeParts[1].trim().isEmpty()) {
+        if (!parts[1].contains(" /to ") || parts[0].trim().isEmpty() || timeParts[0].trim().isEmpty() || timeParts[1].trim().isEmpty()) {
             ErrorHandler.handleEmptyEvent();
+            Nanat.startCommandLoop(taskList);
         }
 
         int num = taskList.numOfTasks();
