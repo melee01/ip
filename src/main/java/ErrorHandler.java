@@ -34,7 +34,8 @@ public class ErrorHandler {
      */
     public static void handleEmptyDescription() {
         System.out.println("____________________________________________________________");
-        System.out.println("     Description cannot be empty.");
+        System.out.println("     OOPS!!! Description cannot be empty.");
+        System.out.println("     Please input again");
         System.out.println("____________________________________________________________");
     }
 
@@ -45,7 +46,8 @@ public class ErrorHandler {
      */
     public static void handleEmptyDeadline() {
         System.out.println("____________________________________________________________");
-        System.out.println("     Invalid deadline format. Use: deadline <description> /by <time>");
+        System.out.println("     OOPS!!! Invalid deadline format. Use: deadline <description> /by <time>");
+        System.out.println("     Please input again");
         System.out.println("____________________________________________________________");
     }
     /**
@@ -55,7 +57,8 @@ public class ErrorHandler {
      */
     public static void handleEmptyEvent() {
         System.out.println("____________________________________________________________");
-        System.out.println("     Invalid event format. Use: event <description> /from <start> /to <end>");
+        System.out.println("     OOPS!!! Invalid event format. Use: event <description> /from <start> /to <end>");
+        System.out.println("     Please input again");
         System.out.println("____________________________________________________________");
     }
 }

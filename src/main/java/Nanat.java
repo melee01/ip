@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,7 +12,18 @@ public class Nanat {
      */
     public static void main(String[] args) {
         Ui.showWelcomeMessage();
+
+        // Create a single TaskList instance and start the user command loop
         TaskList taskList = new TaskList();
+        startCommandLoop(taskList);
+    }
+
+    /**
+     * Starts the loop to handle user commands.
+     *
+     * @param taskList The TaskList instance to store tasks.
+     */
+    public static void startCommandLoop(TaskList taskList) {
         Scanner scanner = new Scanner(System.in);
 
         // Main loop to handle user commands
