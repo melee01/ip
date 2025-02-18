@@ -23,6 +23,14 @@ class TaskList {
         tasks.add(task);
     }
 
+    /**
+     * Deletes a task from the task list at the specified index.
+     * If the index is valid, the task is removed, and a confirmation message is displayed.
+     * Otherwise, an error message is printed.
+     *
+     * @param index The index of the task to be deleted.
+     * @param num   The updated number of tasks in the list after deletion.
+     */
     public void deleteTask(int index, int num) {
         if (isValidIndex(index)) {
             Task removedTask = tasks.remove(index);

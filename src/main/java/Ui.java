@@ -92,6 +92,12 @@ class Ui {
         System.out.println("____________________________________________________________");
     }
 
+    /**
+     * Displays a message confirming the deletion of a task.
+     *
+     * @param task The task that was deleted.
+     * @param num  The number of remaining tasks in the list.
+     */
     public static void showDeleteTaskMessage(Task task, int num) {
 
         System.out.println("____________________________________________________________");
