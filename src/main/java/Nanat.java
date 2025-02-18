@@ -13,16 +13,6 @@ public class Nanat {
      */
     public static void main(String[] args) {
         Ui.showWelcomeMessage();
-
-        // Start the user command loop
-        startCommandLoop();
-    }
-
-    /**
-     * Starts the loop to handle user commands.
-     */
-    public static void startCommandLoop() {
-        // Initialize the task list and scanner
         TaskList taskList = new TaskList();
         Scanner scanner = new Scanner(System.in);
 
