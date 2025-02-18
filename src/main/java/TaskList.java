@@ -23,6 +23,16 @@ class TaskList {
         tasks.add(task);
     }
 
+    public void deleteTask(int index, int num) {
+        if (isValidIndex(index)) {
+            Task removedTask = tasks.remove(index);
+
+            Ui.showDeleteTaskMessage(removedTask, num);
+        } else {
+            System.out.println("Invalid task index!");
+        }
+    }
+
     /**
      * Displays all tasks in the task list.
      */

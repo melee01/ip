@@ -35,6 +35,14 @@ public class Parser {
             } catch (NumberFormatException e) {
                 ErrorHandler.handleNumberFormatException();
             }
+        } else if (command.startsWith("delete")) {
+            int num = taskList.numOfTasks();
+            try {
+                int index = Integer.parseInt(command.substring(7)) - 1;
+                taskList.deleteTask(index, num-1);
+            } catch (NumberFormatException e) {
+                ErrorHandler.handleNumberFormatException();
+            }
         } else if (command.equals("bye")) {
             Ui.showGoodbyeMessage();
             System.exit(0);
