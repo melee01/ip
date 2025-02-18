@@ -93,7 +93,6 @@ public class Parser {
         int num = taskList.numOfTasks();
         Ui.showAddedMessage(2, description, num, taskList);
     }
-
     /**
      * Handles the creation of an Event task.
      *
