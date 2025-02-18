@@ -61,6 +61,7 @@ public class Parser {
         while(description.charAt(0) == ' ') {
             description.substring(1).trim();
         }
+
         int num = taskList.numOfTasks();
         Ui.showAddedMessage(1, description, num, taskList);
     }
@@ -88,6 +89,7 @@ public class Parser {
             ErrorHandler.handleEmptyDeadline();
             Nanat.startCommandLoop();
         }
+
         int num = taskList.numOfTasks();
         Ui.showAddedMessage(2, description, num, taskList);
     }
