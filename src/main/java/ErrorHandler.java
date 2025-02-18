@@ -50,7 +50,6 @@ public class ErrorHandler {
         System.out.println("      Please input again!");
         System.out.println("____________________________________________________________");
     }
-
     /**
      * Handles the case when the event format is invalid.
      * This method displays a message indicating that the event format is incorrect.
