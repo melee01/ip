@@ -15,8 +15,11 @@ public class Nanat {
 
         Save.ensureDataFileExists();
 
-        // Create a single TaskList instance and start the user command loop
+        // Create a TaskList instance and load tasks from the file if they exist
         TaskList taskList = new TaskList();
+        Save.loadTasksFromFile(taskList);
+
+        // Start the user command loop
         startCommandLoop(taskList);
     }
 
