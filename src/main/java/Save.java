@@ -38,7 +38,7 @@ public class Save {
             // Write the task to the file
             fileWriter.write(task.toString() + System.lineSeparator());  // Writing task as a string
 
-            //System.out.println("Task saved to file: " + task);
+            System.out.println("Task saved to file: " + task);
 
         } catch (IOException e) {
             System.err.println("An error occurred while writing the task to the file.");
@@ -71,7 +71,6 @@ public class Save {
 
             // Close the writer
             fileWriter.close();
-            //System.out.println("File updated successfully.");
         } catch (IOException e) {
             System.err.println("An error occurred while updating the file.");
             e.printStackTrace();

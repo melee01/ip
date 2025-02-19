@@ -46,7 +46,9 @@ public class Parser {
             Ui.showGoodbyeMessage();
             System.exit(0);
         } else {
-            System.out.println("     OOPS!!! The description of a todo cannot be empty.");
+            System.out.println("____________________________________________________________");
+            System.out.println("     OOPS!!! Unknown request :(");
+            System.out.println("____________________________________________________________");
         }
     }
 
