@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Save {
-
     private static final String FILE_PATH = "./data/Nanat.txt";
 
     /**
@@ -25,7 +24,6 @@ public class Save {
             System.err.println("Error creating data file: " + e.getMessage());
         }
     }
-
     /**
      * Writes the task to the Nanat.txt file.
      *

@@ -5,7 +5,6 @@ import java.util.Scanner;
  * Parses and handles user commands.
  */
 public class Parser {
-
     /**
      * Handles user input and processes task-related commands.
      *

@@ -2,7 +2,6 @@
  * Represents a ToDo task, which has no specific date or time attached.
  */
 class ToDo extends Task {
-
     /**
      * Constructs a ToDo task with a description.
      *

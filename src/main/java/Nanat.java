@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * The main class that runs the task management program.
  */

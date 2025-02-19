@@ -5,7 +5,6 @@ import java.util.Scanner;
  * Handles the user interface, displaying various messages and outputs.
  */
 class Ui {
-
     /**
      * Displays a welcome message when the program starts.
      */

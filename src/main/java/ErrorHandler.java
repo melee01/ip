@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ErrorHandler {
-
     /**
      * Handles number format exceptions.
      */
