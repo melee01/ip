@@ -4,7 +4,6 @@ import java.util.Scanner;
  * The main class that runs the task management program.
  */
 public class Nanat {
-
     /**
      * Starts the task management program, ensuring the data file exists and interacting with the user.
      *
