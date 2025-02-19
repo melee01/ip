@@ -23,6 +23,14 @@ class TaskList {
         tasks.add(task);
     }
 
+    /**
+     * Sets the task at the specified index in the task list.
+     * If the index is within the current size of the list, it replaces the existing task.
+     * If the index exceeds the current size, it appends the task to the list.
+     *
+     * @param index The position in the task list to set the task.
+     * @param task  The task to be set at the specified index.
+     */
     public void setTask(int index, Task task) {
         if (index < tasks.size()) {
             tasks.set(index, task); // Replace existing task at index
@@ -50,24 +58,6 @@ class TaskList {
 
         // Update the file after task removal
         Save.updateTasksToFile(tasks);
-    }
-
-    /**
-     * Deletes a task from the task list at the specified index.
-     * If the index is valid, the task is removed, and a confirmation message is displayed.
-     * Otherwise, an error message is printed.
-     *
-     * @param index The index of the task to be deleted.
-     * @param num   The updated number of tasks in the list after deletion.
-     */
-    public void deleteTask(int index, int num) {
-        if (isValidIndex(index)) {
-            Task removedTask = tasks.remove(index);
-
-            Ui.showDeleteTaskMessage(removedTask, num);
-        } else {
-            System.out.println("Invalid task index!");
-        }
     }
 
     /**
