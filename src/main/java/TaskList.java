@@ -22,7 +22,6 @@ class TaskList {
     public void addTask(Task task) {
         tasks.add(task);
     }
-
     /**
      * Sets the task at the specified index in the task list.
      * If the index is within the current size of the list, it replaces the existing task.
