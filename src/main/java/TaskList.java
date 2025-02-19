@@ -39,6 +39,9 @@ class TaskList {
         } else {
             System.out.println("Invalid task index!");
         }
+
+        // Update the file after task removal
+        Save.updateTasksToFile(tasks);
     }
 
     /**
@@ -67,6 +70,9 @@ class TaskList {
             Task task = tasks.get(index);
             task.markAsDone();
             Ui.showMarkMessage(task); // Convert Task to String
+
+            // Update the file after task marked
+            Save.updateTasksToFile(tasks);
         } else {
             Ui.showInvalidTaskMessage();
         }
@@ -85,9 +91,13 @@ class TaskList {
             Task task = tasks.get(index);
             if (!task.getStatusIcon().equals("[X]")) {
                 ErrorHandler.handleTaskAlreadyUnmarked(task);
+
             } else {
                 task.markAsNotDone();
                 Ui.showUnmarkMessage(task); // Convert Task to String
+
+                // Update the file after task unmarked
+                Save.updateTasksToFile(tasks);
             }
         } else {
             Ui.showInvalidTaskMessage();
