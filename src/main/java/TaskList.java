@@ -22,7 +22,6 @@ class TaskList {
     public void addTask(Task task) {
         tasks.add(task);
     }
-
     /**
      * Deletes a task from the task list at the specified index.
      * If the index is valid, the task is removed, and a confirmation message is displayed.
