@@ -2,12 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ErrorHandler {
-    /**
-     * Handles invalid task number errors.
-     */
-    public static void handleInvalidTask() {
-        Ui.showInvalidTaskMessage();
-    }
 
     /**
      * Handles number format exceptions.

@@ -86,12 +86,28 @@ class Ui {
         if (task != null) {
             taskList.addTask(task);  // Add the actual Task object, not a formatted string
             System.out.println("        " + task);
+
+            Save.writeTaskToFile(task); // write the added task to saved data file
         }
 
         System.out.println("     Now you have " + num + " tasks in the list.");
         System.out.println("____________________________________________________________");
     }
 
+    /**
+     * Displays a message confirming the deletion of a task.
+     *
+     * @param task The task that was deleted.
+     * @param num  The number of remaining tasks in the list.
+     */
+    public static void showDeleteTaskMessage(Task task, int num) {
+
+        System.out.println("____________________________________________________________");
+        System.out.println("     Noted. Task deleted:");
+        System.out.println("       " + task);
+        System.out.println("     Now you have " + num + " tasks in the list.");
+        System.out.println("____________________________________________________________");
+    }
 
     /**
      * Displays a message when a task is marked as done.

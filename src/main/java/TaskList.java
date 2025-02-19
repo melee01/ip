@@ -17,10 +17,28 @@ class TaskList {
     /**
      * Adds a task to the task list.
      *
-     * @param description The description of the task to be added.
+     * @param task The description of the task to be added.
      */
     public void addTask(Task task) {
         tasks.add(task);
+    }
+
+    /**
+     * Deletes a task from the task list at the specified index.
+     * If the index is valid, the task is removed, and a confirmation message is displayed.
+     * Otherwise, an error message is printed.
+     *
+     * @param index The index of the task to be deleted.
+     * @param num   The updated number of tasks in the list after deletion.
+     */
+    public void deleteTask(int index, int num) {
+        if (isValidIndex(index)) {
+            Task removedTask = tasks.remove(index);
+
+            Ui.showDeleteTaskMessage(removedTask, num);
+        } else {
+            System.out.println("Invalid task index!");
+        }
     }
 
     /**
