@@ -2,6 +2,7 @@
  * Represents an event task that has a specific start and end date/time.
  */
 class Event extends Task {
+
     private String from;
     private String to;
 

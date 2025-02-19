@@ -2,6 +2,7 @@
  * Represents a task with a deadline.
  */
 class Deadline extends Task {
+
     private String by;
 
     /**
