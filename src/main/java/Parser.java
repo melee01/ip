@@ -39,7 +39,7 @@ public class Parser {
             int num = taskList.numOfTasks();
             try {
                 int index = Integer.parseInt(command.substring(7)) - 1;
-                taskList.deleteTask(index, num-1);
+                taskList.deleteTask(index, num - 1);
             } catch (NumberFormatException e) {
                 ErrorHandler.handleNumberFormatException();
             }

@@ -1,20 +1,25 @@
 import java.util.Scanner;
 
 /**
- * The main class that runs the task management program, interacting with the user.
+ * The main class that runs the task management program.
  */
 public class Nanat {
 
     /**
-     * Starts the task management program, interacting with the user via command input.
+     * Starts the task management program, ensuring the data file exists and interacting with the user.
      *
      * @param args Command-line arguments (unused in this case).
      */
     public static void main(String[] args) {
         Ui.showWelcomeMessage();
 
-        // Create a single TaskList instance and start the user command loop
+        Save.ensureDataFileExists();
+
+        // Create a TaskList instance and load tasks from the file if they exist
         TaskList taskList = new TaskList();
+        Save.loadTasksFromFile(taskList);
+
+        // Start the user command loop
         startCommandLoop(taskList);
     }
 

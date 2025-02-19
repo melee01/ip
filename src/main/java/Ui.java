@@ -86,6 +86,8 @@ class Ui {
         if (task != null) {
             taskList.addTask(task);  // Add the actual Task object, not a formatted string
             System.out.println("        " + task);
+
+            Save.writeTaskToFile(task); // write the added task to saved data file
         }
 
         System.out.println("     Now you have " + num + " tasks in the list.");
