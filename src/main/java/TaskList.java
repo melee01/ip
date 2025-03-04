@@ -118,6 +118,26 @@ class TaskList {
         }
     }
 
+    public void findTasks(String keyword) {
+        ArrayList<Task> matchingTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.toString().contains(keyword)) {
+                matchingTasks.add(task);
+            }
+        }
+        System.out.println("____________________________________________________________");
+
+        if (matchingTasks.isEmpty()) {
+            System.out.println("     No matching tasks found.");
+        } else {
+            System.out.println("Here are the matching tasks:");
+            for (int i = 0; i < matchingTasks.size(); i++) {
+                System.out.println("     " + (i + 1) + ". " + matchingTasks.get(i));
+            }
+        }
+        System.out.println("____________________________________________________________");
+    }
+
     /**
      * Checks if the provided index is valid in the task list.
      *
