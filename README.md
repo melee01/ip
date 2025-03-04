@@ -1,9 +1,9 @@
 # Project Nanat
-__  __            __  __            _______  
-| \ | |    / \    | \ | |     / \   |_   _|  
-|  \| |   / _ \   |  \| |    / _ \    | |  
-| . ` |  / ___ \  | . ` |   / ___ \   | |  
-|_|\ _| /_/   \_\ |_|\ _|  /_/   \_\  |_|  
+```__  __            __  __            _______  ```
+```| \ | |    / \    | \ | |     / \   |_   _|  ```
+```|  \| |   / _ \   |  \| |    / _ \    | |  ```
+```| . ` |  / ___ \  | . ` |   / ___ \   | |  ```
+```|_|\ _| /_/   \_\ |_|\ _|  /_/   \_\  |_|  ```
 
 
 **Project Nanat** is an educational software project designed to guide users through the process of building a small software incrementally. It emphasizes the application of Java and Software Engineering (SE) techniques throughout the development process. The ultimate goal of this project is to build **Nanat**, a Personal Assistant Chatbot that helps users keep track of various tasks and events.
@@ -39,4 +39,4 @@ Nanat provides a set of functionalities to help users manage their tasks efficie
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/project-nanat.git
+   git clone https://github.com/melee/ip.git
