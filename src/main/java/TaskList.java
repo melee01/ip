@@ -118,6 +118,12 @@ class TaskList {
         }
     }
 
+    /**
+     * Searches for tasks that contain the specified keyword in their string representation.
+     * Displays the list of matching tasks, or a message if no matching tasks are found.
+     *
+     * @param keyword The keyword to search for in the task descriptions.
+     */
     public void findTasks(String keyword) {
         ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
