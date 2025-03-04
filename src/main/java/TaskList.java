@@ -118,7 +118,6 @@ class TaskList {
         }
     }
 
-
     public void findTasks(String keyword) {
         ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
