@@ -42,6 +42,9 @@ public class Parser {
             } catch (NumberFormatException e) {
                 ErrorHandler.handleNumberFormatException();
             }
+        } else if (command.startsWith("find")) {
+            String keyword = command.substring(5).trim();
+            taskList.findTasks(keyword);
         } else if (command.equals("bye")) {
             Ui.showGoodbyeMessage();
             System.exit(0);
